@@ -1,0 +1,42 @@
+{
+	"@context":
+	{
+		"PublicService": "http://purl.org/vocab/cpsv#PublicService",
+		"Input": "http://purl.org/vocab/cpsv#Input",
+		"Output": "http://purl.org/vocab/cpsv#Output",
+		"Rule": "http://purl.org/vocab/cpsv#Rule",
+		"FormalFramework": "http://purl.org/vocab/cpsv#FormalFramework",
+		"physicallyAvailableAt": {
+			"@id": "http://purl.org/vocab/cpsv#physicallyAvailableAt",
+			"@type": "http://purl.org/dc/terms/Location"
+		},
+		"hasInput": {
+			"@id": "http://purl.org/vocab/cpsv#hasInput",
+			"@type": "http://purl.org/vocab/cpsv#Input"
+		},
+		"produces": {
+			"@id": "http://purl.org/vocab/cpsv#produces",
+			"@type": "http://purl.org/vocab/cpsv#Output"
+		},
+		"implements": {
+			"@id": "http://purl.org/vocab/cpsv#implements",
+			"@type": "http://purl.org/vocab/cpsv#FormalFramework"
+		},
+		"hasRole": {
+			"@id": "http://purl.org/vocab/cpsv#hasRole",
+			"@type": "http://purl.org/vocab/cpsv#PublicService"
+		},
+		"provides": {
+			"@id": "http://purl.org/vocab/cpsv#provides",
+			"@type": "http://purl.org/vocab/cpsv#PublicService"
+		},
+		"uses": {
+			"@id": "http://purl.org/vocab/cpsv#uses",
+			"@type": "http://purl.org/vocab/cpsv#PublicService"
+		},
+		"follows": {
+			"@id": "http://purl.org/vocab/cpsv#follows",
+			"@type": "http://purl.org/vocab/cpsv#Rule"
+		}
+	}
+}
