@@ -1,0 +1,125 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns0: <http://www.w3.org/2001/02pd/rec54#> .
+
+<http://purl.org/vocab/cpsv>
+  a owl:Ontology ;
+  dc:issued "2024-09-19"^^xsd:string ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dc:mediator [
+    foaf:homepage <https://semic.eu> ;
+    foaf:mbox <mailto: contact@semic.eu> ;
+    foaf:name "Semantic Interoperability Community (SEMIC)"^^xsd:string
+  ] ;
+  rdfs:label "cpsv"@en, "cpsv"@nl ;
+  ns0:editor [
+    a foaf:Person ;
+    foaf:firstName "Emiel"^^xsd:string ;
+    foaf:lastName "Dhondt"^^xsd:string
+  ] ;
+  foaf:maker [
+    a foaf:Person ;
+    foaf:firstName "Core Public Service Vocabulary Working Group"^^xsd:string
+  ], [
+    a foaf:Person ;
+    foaf:firstName "Core Vocabularies Working Group"^^xsd:string
+  ] .
+
+<http://purl.org/vocab/cpsv#FormalFramework>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:Class ;
+  rdfs:comment "This class represents the legislation, policy or policies that lie behind the rules that govern the service. As with the Rule class, the Formal Framework class is a sub class of frbr:Expression, i.e. instances of the class are concrete expressions of the more abstract concept of the piece of legislation or policy itself."@en ;
+  rdfs:label "Formal Framework"@en .
+
+<http://purl.org/vocab/cpsv#Input>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:Class ;
+  rdfs:comment "Inputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept."@en ;
+  rdfs:label "Input"@en .
+
+<http://purl.org/vocab/cpsv#Output>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:Class ;
+  rdfs:comment "Outputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept."@en ;
+  rdfs:label "Output"@en .
+
+<http://purl.org/vocab/cpsv#PublicService>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:Class ;
+  rdfs:comment "A Public Service is a mandatory or discretionary set of activities performed, or able to be performed, by or on behalf of a public organisation, publicly funded and arise from public policy."@en ;
+  rdfs:label "Public Service"@en .
+
+<http://purl.org/vocab/cpsv#Rule>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:Class ;
+  rdfs:comment "The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows."@en ;
+  rdfs:label "Rule"@en .
+
+<http://purl.org/vocab/cpsv#uses>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "The uses property links an Agent to a Public Service in which it plays the specific role of user, meaning that it provides the input and receives the output but does not play any direct role in providing the service. This will typically be an individual citizen or an outside organisation."@en ;
+  rdfs:domain dc:Agent ;
+  rdfs:label "uses"@en ;
+  rdfs:range <http://purl.org/vocab/cpsv#PublicService> ;
+  rdfs:subPropertyOf <http://purl.org/vocab/cpsv#hasRole> .
+
+<http://purl.org/vocab/cpsv#hasRole>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "This very general property links an Agent to a Public Service in which it plays some role. Both 'provides' and 'uses' are sub properties of playsRole with specific semantics."@en ;
+  rdfs:domain dc:Agent ;
+  rdfs:label "has role"@en ;
+  rdfs:range <http://purl.org/vocab/cpsv#PublicService> .
+
+<http://purl.org/vocab/cpsv#provides>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "The provides property links an Agent to a Public Service for which it is responsible. Whether it provides the service directly or outsources it is not relevant, the Agent that provides the service is the one that is ultimately responsible for its provision."@en ;
+  rdfs:domain dc:Agent ;
+  rdfs:label "provides"@en ;
+  rdfs:range <http://purl.org/vocab/cpsv#PublicService> ;
+  rdfs:subPropertyOf <http://purl.org/vocab/cpsv#hasRole> .
+
+<http://purl.org/vocab/cpsv#produces>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "The produces property links a Public Service to one or more instances of the Output class which is its range."@en ;
+  rdfs:domain <http://purl.org/vocab/cpsv#PublicService> ;
+  rdfs:label "produces"@en ;
+  rdfs:range <http://purl.org/vocab/cpsv#Output> .
+
+<http://purl.org/vocab/cpsv#physicallyAvailableAt>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "A physical location at which a user may interact with the Public Service."@en ;
+  rdfs:domain <http://purl.org/vocab/cpsv#PublicService> ;
+  rdfs:label "physically available at"@en ;
+  rdfs:range dc:Location .
+
+<http://purl.org/vocab/cpsv#implements>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "The implements property links a Rule to relevant legislation or policy documents i.e. the formal framework under which the Rules are defined."@en ;
+  rdfs:domain <http://purl.org/vocab/cpsv#Rule> ;
+  rdfs:label "implements"@en ;
+  rdfs:range <http://purl.org/vocab/cpsv#FormalFramework> .
+
+<http://purl.org/vocab/cpsv#hasInput>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "The hasInput property links a Public Service to one or more instances of the Input class (see below). A specific service may require the presence of certain inputs or combinations of inputs in order to operate. These should be described in an application profile for a given service."@en ;
+  rdfs:domain <http://purl.org/vocab/cpsv#PublicService> ;
+  rdfs:label "has input"@en ;
+  rdfs:range <http://purl.org/vocab/cpsv#Input> .
+
+<http://purl.org/vocab/cpsv#follows>
+  rdfs:isDefinedBy <http://purl.org/vocab/cpsv> ;
+  a owl:ObjectProperty ;
+  rdfs:comment "It links a Public Service to the Rule(s) under which it operates."@en ;
+  rdfs:domain <http://purl.org/vocab/cpsv#PublicService> ;
+  rdfs:label "follows"@en ;
+  rdfs:range <http://purl.org/vocab/cpsv#Rule> .

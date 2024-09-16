@@ -1,0 +1,470 @@
+{
+  "dcterms:mediator": {
+    "foaf:homepage": "https://semic.eu",
+    "foaf:mbox": "mailto: contact@semic.eu",
+    "foaf:name": "Semantic Interoperability Community (SEMIC)"
+  },
+  "@id": "http://purl.org/vocab/cpsv",
+  "@type": "http://www.w3.org/2002/07/owl#Ontology",
+  "label": {
+    "en": "cpsv",
+    "nl": "cpsv"
+  },
+  "authors": [
+    {
+      "@type": "foaf:Person",
+      "foaf:firstName": "Core Public Service Vocabulary Working Group"
+    },
+    {
+      "@type": "foaf:Person",
+      "foaf:firstName": "Core Vocabularies Working Group"
+    }
+  ],
+  "editors": [
+    {
+      "@type": "foaf:Person",
+      "foaf:firstName": "Emiel",
+      "foaf:lastName": "Dhondt"
+    }
+  ],
+  "contributors": [],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "issued": "TODO",
+  "navigation": {
+    "prev": "https://github.com/SEMICeu/CPSV/releases/tag/v1.0.1"
+  },
+  "publication-state": "Semic Recommendation",
+  "publication-date": "2024-09-19",
+  "classes": [
+    {
+      "@id": "http://purl.org/vocab/cpsv#FormalFramework",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "label": {
+        "en": "Formal Framework"
+      },
+      "definition": {
+        "en": "This class represents the legislation, policy or policies that lie behind the rules that govern the service. As with the Rule class, the Formal Framework class is a sub class of frbr:Expression, i.e. instances of the class are concrete expressions of the more abstract concept of the piece of legislation or policy itself."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#Input",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "label": {
+        "en": "Input"
+      },
+      "definition": {
+        "en": "Inputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#Output",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "label": {
+        "en": "Output"
+      },
+      "definition": {
+        "en": "Outputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#PublicService",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "label": {
+        "en": "Public Service"
+      },
+      "definition": {
+        "en": "A Public Service is a mandatory or discretionary set of activities performed, or able to be performed, by or on behalf of a public organisation, publicly funded and arise from public policy."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#Rule",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "label": {
+        "en": "Rule"
+      },
+      "definition": {
+        "en": "The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows."
+      },
+      "parents": []
+    }
+  ],
+  "externals": [],
+  "properties": [
+    {
+      "@id": "http://purl.org/vocab/cpsv#uses",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "uses"
+      },
+      "definition": {
+        "en": "The uses property links an Agent to a Public Service in which it plays the specific role of user, meaning that it provides the input and receives the output but does not play any direct role in providing the service. This will typically be an individual citizen or an outside organisation."
+      },
+      "domain": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "range": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/cpsv#hasRole"
+      ]
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#provides",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "provides"
+      },
+      "definition": {
+        "en": "The provides property links an Agent to a Public Service for which it is responsible. Whether it provides the service directly or outsources it is not relevant, the Agent that provides the service is the one that is ultimately responsible for its provision."
+      },
+      "domain": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "range": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/cpsv#hasRole"
+      ]
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#produces",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "produces"
+      },
+      "definition": {
+        "en": "The produces property links a Public Service to one or more instances of the Output class which is its range."
+      },
+      "domain": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "range": [
+        "http://purl.org/vocab/cpsv#Output"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#physicallyAvailableAt",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "physically available at"
+      },
+      "definition": {
+        "en": "A physical location at which a user may interact with the Public Service."
+      },
+      "domain": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Location"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#implements",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "implements"
+      },
+      "definition": {
+        "en": "The implements property links a Rule to relevant legislation or policy documents i.e. the formal framework under which the Rules are defined."
+      },
+      "domain": [
+        "http://purl.org/vocab/cpsv#Rule"
+      ],
+      "range": [
+        "http://purl.org/vocab/cpsv#FormalFramework"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#hasRole",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "has role"
+      },
+      "definition": {
+        "en": "This very general property links an Agent to a Public Service in which it plays some role. Both 'provides' and 'uses' are sub properties of playsRole with specific semantics."
+      },
+      "domain": [
+        "http://purl.org/dc/terms/Agent"
+      ],
+      "range": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#hasInput",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "has input"
+      },
+      "definition": {
+        "en": "The hasInput property links a Public Service to one or more instances of the Input class (see below). A specific service may require the presence of certain inputs or combinations of inputs in order to operate. These should be described in an application profile for a given service."
+      },
+      "domain": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "range": [
+        "http://purl.org/vocab/cpsv#Input"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://purl.org/vocab/cpsv#follows",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "label": {
+        "en": "follows"
+      },
+      "definition": {
+        "en": "It links a Public Service to the Rule(s) under which it operates."
+      },
+      "domain": [
+        "http://purl.org/vocab/cpsv#PublicService"
+      ],
+      "range": [
+        "http://purl.org/vocab/cpsv#Rule"
+      ],
+      "generalization": []
+    }
+  ],
+  "externalproperties": [
+    {
+      "name": {
+        "en": "keyword"
+      },
+      "@id": "http://www.w3.org/ns/dcat#keyword",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "status"
+      },
+      "@id": "http://www.w3.org/ns/adms#status",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "type"
+      },
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "functions of government"
+      },
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "name"
+      },
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "name"
+      },
+      "@id": "http://purl.org/dc/terms/title",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "spatial"
+      },
+      "@id": "http://purl.org/dc/terms/spatial",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "language"
+      },
+      "@id": "http://purl.org/dc/terms/language",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "language"
+      },
+      "@id": "http://purl.org/dc/terms/language",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "identifier"
+      },
+      "@id": "http://purl.org/dc/terms/identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "identifier"
+      },
+      "@id": "http://purl.org/dc/terms/identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "addressee"
+      },
+      "@id": "http://purl.org/dc/terms/audience",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "thematic area"
+      },
+      "@id": "http://data.europa.eu/m8g/thematicArea",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "sector"
+      },
+      "@id": "http://data.europa.eu/m8g/sector",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "processing time"
+      },
+      "@id": "http://data.europa.eu/m8g/processingTime",
+      "@type": "rdf:Property"
+    }
+  ],
+  "@context": {
+    "m8g": "http://data.europa.eu/m8g/",
+    "r5r": "http://data.europa.eu/r5r/",
+    "adms": "http://www.w3.org/ns/adms#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "void": "http://rdfs.org/ns/void#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "person": "http://www.w3.org/ns/person#",
+    "rec": "http://www.w3.org/2001/02pd/rec54#",
+    "vann": "http://purl.org/vocab/vann/",
+    "sh": "http://w3.org/ns/shacl#",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "license": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "publication-date": {
+      "@id": "dcterms:issued"
+    },
+    "authors": {
+      "@type": "person:Person",
+      "@id": "foaf:maker"
+    },
+    "editors": {
+      "@type": "person:Person",
+      "@id": "rec:editor"
+    },
+    "contributors": {
+      "@type": "person:Person",
+      "@id": "dcterms:contributor"
+    },
+    "affiliation": {
+      "@id": "https://schema.org/affiliation"
+    },
+    "classes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "datatypes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "name": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "definition": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "properties": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "minCardinality": {
+      "@id": "sh:minCount"
+    },
+    "maxCardinality": {
+      "@id": "sh:maxCount"
+    },
+    "generalization": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "usage": {
+      "@id": "skos:scopeNote",
+      "@container": "@language"
+    },
+    "parents": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "foaf:homepage": {
+      "@id": "foaf:homepage",
+      "@type": "@id"
+    },
+    "foaf:mbox": {
+      "@id": "foaf:mbox",
+      "@type": "@id"
+    },
+    "equivalent": {
+      "@id": "owl:equivalentClass",
+      "@type": "@id"
+    }
+  }
+}

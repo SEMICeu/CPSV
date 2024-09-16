@@ -1,0 +1,2943 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+ 
+
+
+
+<head>
+    
+	
+    <meta charset="utf-8" />
+    <title>Core Public Service Vocabulary</title>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+    <script class="remove">
+    // All config options at https://respec.org/docs/
+
+	var myeditors = [
+	
+	
+	
+	
+	    
+	    
+		
+		   {
+		    name: "Emiel Dhondt",
+		      
+		      
+		      
+		    }
+		
+		
+             
+        
+	
+		]
+
+	var myauthors = [
+	
+	
+	    
+	    
+		
+		   {
+		    name: "Core Public Service Vocabulary Working Group ",
+		      
+		      
+		      
+		    }
+		, 
+		
+		   {
+		    name: "Core Vocabularies Working Group ",
+		      
+		      
+		      
+		    }
+		
+		
+             
+        
+	
+	
+	
+		]
+    var myowners = [
+            {
+                value: "SEMIC",
+                href: "https://joinup.ec.europa.eu/collection/semic-support-centre",
+            },
+            {
+                value: "Pavlina Fragkou (DG DIGIT)",
+            },
+		]
+
+
+   
+
+    var respecConfig = {
+      edDraftURI: "https://semiceu.github.io/CPSV/releases/1.0.2",
+      latestVersion: "https://semiceu.github.io/CPSV/releases/1.0.2",
+      specStatus: "base",
+      publishDate: "2024-09-19",
+      editors: myeditors,
+      authors: myauthors,
+      otherLinks: [
+        {
+          key: "Owners:",
+          data: myowners
+        }
+      ],
+      github: "SEMICeu/CPSV",
+      shortName: "Core Public Service Vocabulary",
+      xref: "web-platform",
+      doJsonLd: true,
+      logos: [{
+        src: "https://semiceu.github.io/CPOV/releases/2.1.0/html/semic-icon.png",
+        url: "https://semic.eu",
+        alt: "SEMIC",
+        width: 154,
+        height: 140,
+        id: "semic-logo",
+      },],
+      generatedSubtitle: "",
+      additionalCopyrightHolders: "",
+      localBiblio: {
+        "ISA":{
+           "href":"https://ec.europa.eu/isa/",
+           "title":"Interoperability Solutions for European Public Administrations (ISA)",
+           "publisher":"European Commission"
+          },
+        "ISA2":{
+          "href":"https://ec.europa.eu/isa2/",
+          "title":"Interoperability solutions for public administrations, businesses and citizens (ISA²)",
+          "publisher":"European Commission"
+        },
+        "SEMIC":{
+          "href":"https://ec.europa.eu/isa2/actions/improving-semantic-interoperability-european-egovernment-systems_en",
+          "title":"Interoperability solutions for public administrations, businesses and citizens (ISA²). Improving semantic interoperability in European eGovernment systems",
+          "publisher":"European Commission"
+         },
+        "DEU" : {
+          "href":"https://data.europa.eu",
+          "title":"The official portal for European data",
+          "publisher":"European Commission"
+        }
+       
+
+      }
+    };
+
+
+
+    </script>
+    <style>
+      .figure img, .sidefigure img, figure img, .figure object, .sidefigure object, figure object, img, .img {
+      max-width: 100%;
+      margin: auto;
+      height: auto;
+      }
+    </style>
+     
+    <p class="copyright">
+        Copyright © 2022
+    </p>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msapplication-TileColor" content="#7ED956" />
+</head>
+<body>
+    
+
+    <!-- Start page content -->
+
+
+
+<section id="specintro">
+    <h2>
+        Introduction
+    </h2>
+    
+        <p>
+            This document describes a <strong>vocabulary</strong>, in this case <strong>Core Public Service Vocabulary</strong>. 
+	    A vocabulary is a semantic data specification designed so that the included terms are highly reusable.
+	    The included classes and properties come with a limited set of constraints.
+        </p>
+        <p>
+        CPSV, the Core Public Service Vocabulary, is a vocabulary for describing Public Services. This Vocabulary combined with <a href="https://github.com/SEMICeu/Consolidated-Core-Vocabularies">the SEMIC eGovernment Core Vocabularies</a> supports <a href="https://github.com/SEMICeu/CPSV-AP">CPSV-AP</a>.
+        </p>
+
+</section>
+
+
+<section id="abstract">
+The Core Public Service Vocabulary is one of the Core Vocabularies that have been developed by the SEMIC action of the former ISA² Programme,
+which is now named Interoperable Europe.
+ The specification is developed in an open process with the active involvement of the SEMIC action stakeholders including:
+  The e-Government Core Vocabularies Working Group (with a total of 69 people from 22 countries, 19 EU and 3 non-EU countries (USA, South-Africa, and Norway), and several EU Institutions and the Directorate-General for Digital Services: DG DIGIT.
+</section>
+
+
+
+<section id="specstatus" class="informative">
+    <h2>Status</h2>
+        <p>
+            This vocabulary has the status SEMIC Recommendation published at 2024-09-19. This Vocabulary is in its final form and will not be updated or changed.
+            This Vocabulary will remain a SEMIC Recommendation and it will remain supported.
+            If new concepts are needed to support CPSV-AP these will be included in <a href="https://github.com/SEMICeu/Consolidated-Core-Vocabularies">the Core Vocabularies defined under the m8g name space</a>.
+            If you are not yet reusing CPSV but are considering to do so we advice to first consult <a href="https://github.com/SEMICeu/Consolidated-Core-Vocabularies">the other Core Vocabularies</a> and <a href="https://github.com/SEMICeu/ADMS?tab=readme-ov-file">ADMS</a> as these Vocabularies are actively maintained and kept up to date.
+        </p>
+        <p>
+           This latest version is a re-release of <a href="https://github.com/SEMICeu/CPSV/releases/tag/v1.0.1">version 1.0.1</a>. It is intended to provide this Vocabulary in a human readable manner in line with the other SEMIC assets.
+        </p>
+
+
+</section>
+
+
+
+
+<section id="speclicence">
+    <h2>
+        License
+    </h2>
+    
+        <p>
+	<!--
+            <span rel="dct:type"
+                  property="dct:title"
+                  href="http://purl.org/dc/dcmitype/Text"
+                  xmlns:dct="http://purl.org/dc/terms/">
+		  This specification </span> of <a rel="cc:attributionURL" property="cc:attributionName" href="ORGANISATION" xmlns:cc="http://creativecommons.org/ns#">ORGANISATION </a> 
+	          is published under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">"CC0"</a>.
+	-->
+             Copyright © 2023 European Union. All material in this repository is published under the license CC-BY 4.0, unless explicitly otherwise mentioned.
+        </p>
+    
+</section>
+
+
+<section id="conformance" class="informative">
+All sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+</section>
+
+
+
+<section id="specterminology">
+<h1>Terminology</h1>
+
+<h2>Used Prefixes</h2>
+
+
+        <table id="table-namespaces" class="simple">
+            <thead><tr><th>Prefix</th><th>Namespace IRI</th></tr></thead>
+            <tbody>
+            <tr><td><code>cpsv</code></td><td><code>http://purl.org/vocab/cpsv#</code></td></tr>
+            <tr><td><code>dct</code></td><td><code>http://purl.org/dc/terms/</code></td></tr>
+            </tbody>
+        </table>
+
+</section>
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+
+
+<section>
+<h1>Vocabulary Overview</h1>
+
+    <div id="overview">
+                
+                        <p>
+                            This specification describes the following classes:
+                            <br />
+                            | 
+			      <a href="#FormalFramework">Formal Framework</a> | 
+			      <a href="#Input">Input</a> | 
+			      <a href="#Output">Output</a> | 
+			      <a href="#PublicService">Public Service</a> | 
+			      <a href="#Rule">Rule</a> |
+                        </p>
+                        <p> and the following properties:
+                            <br />
+                            | 
+			      <a href="#follows">follows</a> |
+			      <a href="#hasInput">has input</a> |
+			      <a href="#hasRole">has role</a> |
+			      <a href="#implements">implements</a> |
+			      <a href="#physicallyAvailableAt">physically available at</a> |
+			      <a href="#produces">produces</a> |
+			      <a href="#provides">provides</a> |
+			      <a href="#uses">uses</a> |
+                        </p>
+                
+                
+    </div>
+    <div>
+        <a href="/CPSV/releases/1.0.2/html/overview.jpg"
+           target="_blank">
+            <img src="/CPSV/releases/1.0.2/html/overview.jpg"/>
+        </a>
+    </div>
+
+
+<h2>
+   Classes
+</h2>
+This section lists the classes matching the base namespace of this vocabulary.
+
+
+   
+
+    <h3 id="FormalFramework" >Formal Framework</h3>
+    <table class="def" id="FormalFramework">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20FormalFramework&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#FormalFramework"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#FormalFramework"
+					   data-placement="right">Formal Framework</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="FormalFramework.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#FormalFramework
+				</td>
+			</tr>
+                        <tr id="FormalFramework.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				Formal Framework
+				</td>
+			</tr>
+                        <tr id="FormalFramework.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				This class represents the legislation, policy or policies that lie behind the rules that govern the service. As with the Rule class, the Formal Framework class is a sub class of frbr:Expression, i.e. instances of the class are concrete expressions of the more abstract concept of the piece of legislation or policy itself.
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="Input" >Input</h3>
+    <table class="def" id="Input">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20Input&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#Input"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#Input"
+					   data-placement="right">Input</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="Input.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#Input
+				</td>
+			</tr>
+                        <tr id="Input.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				Input
+				</td>
+			</tr>
+                        <tr id="Input.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				Inputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept.
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="Output" >Output</h3>
+    <table class="def" id="Output">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20Output&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#Output"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#Output"
+					   data-placement="right">Output</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="Output.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#Output
+				</td>
+			</tr>
+                        <tr id="Output.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				Output
+				</td>
+			</tr>
+                        <tr id="Output.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				Outputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept.
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="PublicService" >Public Service</h3>
+    <table class="def" id="PublicService">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20PublicService&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#PublicService"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#PublicService"
+					   data-placement="right">Public Service</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="PublicService.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#PublicService
+				</td>
+			</tr>
+                        <tr id="PublicService.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				Public Service
+				</td>
+			</tr>
+                        <tr id="PublicService.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				A Public Service is a mandatory or discretionary set of activities performed, or able to be performed, by or on behalf of a public organisation, publicly funded and arise from public policy.
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="Rule" >Rule</h3>
+    <table class="def" id="Rule">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20Rule&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#Rule"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#Rule"
+					   data-placement="right">Rule</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="Rule.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#Rule
+				</td>
+			</tr>
+                        <tr id="Rule.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				Rule
+				</td>
+			</tr>
+                        <tr id="Rule.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows.
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+
+<h2>
+   Properties
+</h2>
+This section lists the properties matching the base namespace of this vocabulary.
+
+
+
+   
+
+    <h3 id="follows">follows</h3>
+    <table class="def" id="table-term-follows">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20follows&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#follows"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#follows"
+					   data-placement="right">follows</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="follows.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#follows
+				</td>
+			</tr>
+                        <tr id="follows.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				follows
+				</td>
+			</tr>
+                        <tr id="follows.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				It links a Public Service to the Rule(s) under which it operates.
+				</td>
+			</tr>
+			
+			
+                        <tr id="follows.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#PublicService"><div class="shorten">http://purl.org/vocab/cpsv#PublicService</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="follows.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#Rule"><div class="shorten">http://purl.org/vocab/cpsv#Rule</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="hasInput">has input</h3>
+    <table class="def" id="table-term-hasInput">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20hasInput&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#hasInput"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#hasInput"
+					   data-placement="right">has input</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="hasinput.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#hasInput
+				</td>
+			</tr>
+                        <tr id="hasinput.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				has input
+				</td>
+			</tr>
+                        <tr id="hasinput.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The hasInput property links a Public Service to one or more instances of the Input class (see below). A specific service may require the presence of certain inputs or combinations of inputs in order to operate. These should be described in an application profile for a given service.
+				</td>
+			</tr>
+			
+			
+                        <tr id="hasinput.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#PublicService"><div class="shorten">http://purl.org/vocab/cpsv#PublicService</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="hasinput.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#Input"><div class="shorten">http://purl.org/vocab/cpsv#Input</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="hasRole">has role</h3>
+    <table class="def" id="table-term-hasRole">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20hasRole&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#hasRole"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#hasRole"
+					   data-placement="right">has role</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="hasrole.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#hasRole
+				</td>
+			</tr>
+                        <tr id="hasrole.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				has role
+				</td>
+			</tr>
+                        <tr id="hasrole.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				This very general property links an Agent to a Public Service in which it plays some role. Both &#39;provides&#39; and &#39;uses&#39; are sub properties of playsRole with specific semantics.
+				</td>
+			</tr>
+			
+			
+                        <tr id="hasrole.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/dc/terms/Agent"><div class="shorten">http://purl.org/dc/terms/Agent</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="hasrole.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#PublicService"><div class="shorten">http://purl.org/vocab/cpsv#PublicService</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="implements">implements</h3>
+    <table class="def" id="table-term-implements">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20implements&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#implements"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#implements"
+					   data-placement="right">implements</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="implements.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#implements
+				</td>
+			</tr>
+                        <tr id="implements.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				implements
+				</td>
+			</tr>
+                        <tr id="implements.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The implements property links a Rule to relevant legislation or policy documents i.e. the formal framework under which the Rules are defined.
+				</td>
+			</tr>
+			
+			
+                        <tr id="implements.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#Rule"><div class="shorten">http://purl.org/vocab/cpsv#Rule</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="implements.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#FormalFramework"><div class="shorten">http://purl.org/vocab/cpsv#FormalFramework</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="physicallyAvailableAt">physically available at</h3>
+    <table class="def" id="table-term-physicallyAvailableAt">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20physicallyAvailableAt&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#physicallyAvailableAt"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#physicallyAvailableAt"
+					   data-placement="right">physically available at</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="physicallyavailableat.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#physicallyAvailableAt
+				</td>
+			</tr>
+                        <tr id="physicallyavailableat.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				physically available at
+				</td>
+			</tr>
+                        <tr id="physicallyavailableat.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				A physical location at which a user may interact with the Public Service.
+				</td>
+			</tr>
+			
+			
+                        <tr id="physicallyavailableat.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#PublicService"><div class="shorten">http://purl.org/vocab/cpsv#PublicService</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="physicallyavailableat.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/dc/terms/Location"><div class="shorten">http://purl.org/dc/terms/Location</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="produces">produces</h3>
+    <table class="def" id="table-term-produces">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20produces&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#produces"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#produces"
+					   data-placement="right">produces</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="produces.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#produces
+				</td>
+			</tr>
+                        <tr id="produces.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				produces
+				</td>
+			</tr>
+                        <tr id="produces.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The produces property links a Public Service to one or more instances of the Output class which is its range.
+				</td>
+			</tr>
+			
+			
+                        <tr id="produces.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#PublicService"><div class="shorten">http://purl.org/vocab/cpsv#PublicService</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="produces.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#Output"><div class="shorten">http://purl.org/vocab/cpsv#Output</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="provides">provides</h3>
+    <table class="def" id="table-term-provides">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20provides&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#provides"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#provides"
+					   data-placement="right">provides</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="provides.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#provides
+				</td>
+			</tr>
+                        <tr id="provides.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				provides
+				</td>
+			</tr>
+                        <tr id="provides.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The provides property links an Agent to a Public Service for which it is responsible. Whether it provides the service directly or outsources it is not relevant, the Agent that provides the service is the one that is ultimately responsible for its provision.
+				</td>
+			</tr>
+			
+			
+                        <tr id="provides.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/dc/terms/Agent"><div class="shorten">http://purl.org/dc/terms/Agent</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="provides.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#PublicService"><div class="shorten">http://purl.org/vocab/cpsv#PublicService</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="provides.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td> <a href="http://purl.org/vocab/cpsv#hasRole"><div class="shorten">http://purl.org/vocab/cpsv#hasRole</div></a>
+                                
+				</td>
+			</tr>
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3 id="uses">uses</h3>
+    <table class="def" id="table-term-uses">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20uses&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/vocab/cpsv#uses"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/vocab/cpsv#uses"
+					   data-placement="right">uses</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="uses.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/vocab/cpsv#uses
+				</td>
+			</tr>
+                        <tr id="uses.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				uses
+				</td>
+			</tr>
+                        <tr id="uses.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The uses property links an Agent to a Public Service in which it plays the specific role of user, meaning that it provides the input and receives the output but does not play any direct role in providing the service. This will typically be an individual citizen or an outside organisation.
+				</td>
+			</tr>
+			
+			
+                        <tr id="uses.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td> 
+				<a href="http://purl.org/dc/terms/Agent"><div class="shorten">http://purl.org/dc/terms/Agent</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="uses.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td> 
+				<a href="http://purl.org/vocab/cpsv#PublicService"><div class="shorten">http://purl.org/vocab/cpsv#PublicService</div></a>
+                                
+				</td>
+			</tr>
+			
+			
+                        <tr id="uses.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td> <a href="http://purl.org/vocab/cpsv#hasRole"><div class="shorten">http://purl.org/vocab/cpsv#hasRole</div></a>
+                                
+				</td>
+			</tr>
+			
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+</section>
+
+<!--
+<section>
+<h2>
+   External terms
+</h2>
+This section lists the classes and properties that are mapped on external URIs.
+Either these are reused as-is, i.e. with no formal additional constraints compared to those retrievable via dereferencing the URI, or they are reused with terminological changes, i.e. having additional changes restricting the use to the needs of this vocabulary context.
+
+
+
+   
+
+    <h3>addressee</h3>
+    <table class="def" id="table-term-addressee">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20addressee&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/audience"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/audience"
+					   data-placement="right">addressee</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="addressee.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/audience
+				</td>
+			</tr>
+                        <tr id="addressee.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				addressee
+				</td>
+			</tr>
+                        <tr id="addressee.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The target recipient of the Public Service.
+				</td>
+			</tr>
+                        <tr id="addressee.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				Examples are citizens, business, etc.
+				</td>
+			</tr>
+                        <tr id="addressee.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="addressee.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="addressee.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>description</h3>
+    <table class="def" id="table-term-description">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20description&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/description"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/description"
+					   data-placement="right">description</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="description.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/description
+				</td>
+			</tr>
+                        <tr id="description.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				description
+				</td>
+			</tr>
+                        <tr id="description.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				A free text Description of the Public Service.
+				</td>
+			</tr>
+                        <tr id="description.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public administrations are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information.
+				</td>
+			</tr>
+                        <tr id="description.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="description.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="description.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>description</h3>
+    <table class="def" id="table-term-description">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20description&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/description"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/description"
+					   data-placement="right">description</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="description.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/description
+				</td>
+			</tr>
+                        <tr id="description.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				description
+				</td>
+			</tr>
+                        <tr id="description.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				A free text Description of the Rule.
+				</td>
+			</tr>
+                        <tr id="description.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+                        <tr id="description.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="description.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="description.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>functions of government</h3>
+    <table class="def" id="table-term-functionsOfGovernment">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20functionsOfGovernment&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/type"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/type"
+					   data-placement="right">functions of government</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="functionsofgovernment.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/type
+				</td>
+			</tr>
+                        <tr id="functionsofgovernment.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				functions of government
+				</td>
+			</tr>
+                        <tr id="functionsofgovernment.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The purpose of a government activity, which the public service is intended for.
+				</td>
+			</tr>
+                        <tr id="functionsofgovernment.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				The possible values for this property are described in the controlled vocabulary <a href=" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/main-activity">COFOG main activity</a> Authority Table of the Publications Office. 
+				</td>
+			</tr>
+                        <tr id="functionsofgovernment.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="functionsofgovernment.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="functionsofgovernment.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>identifier</h3>
+    <table class="def" id="table-term-identifier">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20identifier&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/identifier"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/identifier"
+					   data-placement="right">identifier</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="identifier.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/identifier
+				</td>
+			</tr>
+                        <tr id="identifier.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				identifier
+				</td>
+			</tr>
+                        <tr id="identifier.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				A formally-issued Identifier for the Public Service.
+				</td>
+			</tr>
+                        <tr id="identifier.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+                        <tr id="identifier.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="identifier.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="identifier.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>identifier</h3>
+    <table class="def" id="table-term-identifier">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20identifier&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/identifier"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/identifier"
+					   data-placement="right">identifier</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="identifier.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/identifier
+				</td>
+			</tr>
+                        <tr id="identifier.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				identifier
+				</td>
+			</tr>
+                        <tr id="identifier.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				An Identifier for the Rule.
+				</td>
+			</tr>
+                        <tr id="identifier.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+                        <tr id="identifier.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="identifier.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="identifier.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>keyword</h3>
+    <table class="def" id="table-term-keyword">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20keyword&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://www.w3.org/ns/dcat#keyword"
+					   data-toggle="tooltip"
+					   data-content="http://www.w3.org/ns/dcat#keyword"
+					   data-placement="right">keyword</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="keyword.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://www.w3.org/ns/dcat#keyword
+				</td>
+			</tr>
+                        <tr id="keyword.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				keyword
+				</td>
+			</tr>
+                        <tr id="keyword.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				A keyword, term or phrase to describe the Public Service.
+				</td>
+			</tr>
+                        <tr id="keyword.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+                        <tr id="keyword.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="keyword.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="keyword.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>language</h3>
+    <table class="def" id="table-term-language">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20language&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/language"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/language"
+					   data-placement="right">language</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="language.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/language
+				</td>
+			</tr>
+                        <tr id="language.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				language
+				</td>
+			</tr>
+                        <tr id="language.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The language(s) in which the Public Service is available.
+				</td>
+			</tr>
+                        <tr id="language.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				This could be one language or multiple languages, for instance in countries with more than one official language.
+
+The recommended controlled vocabularies for this property is the <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language">Language</a> Authority Table of the Publications Office.
+				</td>
+			</tr>
+                        <tr id="language.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="language.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="language.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>language</h3>
+    <table class="def" id="table-term-language">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20language&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/language"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/language"
+					   data-placement="right">language</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="language.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/language
+				</td>
+			</tr>
+                        <tr id="language.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				language
+				</td>
+			</tr>
+                        <tr id="language.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The language(s) in which the Rule is available.
+				</td>
+			</tr>
+                        <tr id="language.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				This could be one or multiple languages, for instance in countries with more than one official language. The recommended controlled vocabularies for this property is the <a href=" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language">Language</a> Authority Table of the Publications Office.
+				</td>
+			</tr>
+                        <tr id="language.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="language.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="language.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>name</h3>
+    <table class="def" id="table-term-name">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20name&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/title"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/title"
+					   data-placement="right">name</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="name.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/title
+				</td>
+			</tr>
+                        <tr id="name.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				name
+				</td>
+			</tr>
+                        <tr id="name.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The official Name of the Public Service.
+				</td>
+			</tr>
+                        <tr id="name.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+                        <tr id="name.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="name.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="name.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>name</h3>
+    <table class="def" id="table-term-name">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20name&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/title"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/title"
+					   data-placement="right">name</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="name.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/title
+				</td>
+			</tr>
+                        <tr id="name.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				name
+				</td>
+			</tr>
+                        <tr id="name.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The Name of the Rule.
+				</td>
+			</tr>
+                        <tr id="name.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+                        <tr id="name.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="name.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="name.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>processing time</h3>
+    <table class="def" id="table-term-processingTime">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20processingTime&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://data.europa.eu/m8g/processingTime"
+					   data-toggle="tooltip"
+					   data-content="http://data.europa.eu/m8g/processingTime"
+					   data-placement="right">processing time</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="processingtime.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://data.europa.eu/m8g/processingTime
+				</td>
+			</tr>
+                        <tr id="processingtime.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				processing time
+				</td>
+			</tr>
+                        <tr id="processingtime.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. 
+				</td>
+			</tr>
+                        <tr id="processingtime.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				The actual information is provided using the <a href="https://www.iso.org/standard/70907.html">ISO8601</a> syntax for durations. 
+<br/><br/>
+Some examples are provided below:<br/>
+Duration Syntax - Syntax<br/>
+5 years - P5Y<br/>
+1 month - P1M<br/>
+3 days - P3D<br/>
+2 days 4 hours - P2DT4H
+<br/><br/>
+Durations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. 
+<br/><br/>
+Note that days and times are separated by an uppercase T which also
+disambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">Wikipedia page</a> that references the official <a href="https://www.iso.org/standard/70907.html">ISO standard</a>.
+<br/><br/>
+This approach is consistent with both <a href="https://schema.org/">schema.org</a> and the <a href="https://www.w3.org/TR/owl-time/">W3C OWL Time Ontology.<a/>
+
+				</td>
+			</tr>
+                        <tr id="processingtime.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="processingtime.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="processingtime.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>sector</h3>
+    <table class="def" id="table-term-sector">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20sector&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://data.europa.eu/m8g/sector"
+					   data-toggle="tooltip"
+					   data-content="http://data.europa.eu/m8g/sector"
+					   data-placement="right">sector</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="sector.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://data.europa.eu/m8g/sector
+				</td>
+			</tr>
+                        <tr id="sector.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				sector
+				</td>
+			</tr>
+                        <tr id="sector.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The industry or sector a Public Service relates to, or is intended for.
+				</td>
+			</tr>
+                        <tr id="sector.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary. The possible values for this property are described in the controlled vocabulary <a href=" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/data-theme">Data theme</a> Authority Table of the Publications Office. 
+				</td>
+			</tr>
+                        <tr id="sector.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="sector.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="sector.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>spatial</h3>
+    <table class="def" id="table-term-spatial">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20spatial&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/spatial"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/spatial"
+					   data-placement="right">spatial</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="spatial.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/spatial
+				</td>
+			</tr>
+                        <tr id="spatial.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				spatial
+				</td>
+			</tr>
+                        <tr id="spatial.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority.
+				</td>
+			</tr>
+                        <tr id="spatial.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				A common usage of the spatial property will be to define the Administrative Territorial Unit(s) - typically a country or region - in which a Public Service is available. The Publications Office of the European Union offers <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/atu">a URI set</a> that is suitable for this purpose. In case the <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/atu">ATU code list</a> is not suitable, <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/nuts">NUTS</a> or <a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">LAU</a>, <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/place">NAL Place</a> or <a href="http://www.geonames.org">Geonames</a> are recommended to use, in that order. If those are still not sufficient, we recommend to define your own code list.
+
+N.B. The spatial restriction is not meant to be used to describe eligibility or the speed of operation of the service. These aspects will be covered by the <a href="http://data.europa.eu/m8g/Criterion">Criterion class</a>.
+				</td>
+			</tr>
+                        <tr id="spatial.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="spatial.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="spatial.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>status</h3>
+    <table class="def" id="table-term-status">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20status&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://www.w3.org/ns/adms#status"
+					   data-toggle="tooltip"
+					   data-content="http://www.w3.org/ns/adms#status"
+					   data-placement="right">status</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="status.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://www.w3.org/ns/adms#status
+				</td>
+			</tr>
+                        <tr id="status.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				status
+				</td>
+			</tr>
+                        <tr id="status.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				It indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary.
+				</td>
+			</tr>
+                        <tr id="status.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+                        <tr id="status.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="status.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="status.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>thematic area</h3>
+    <table class="def" id="table-term-thematicArea">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20thematicArea&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://data.europa.eu/m8g/thematicArea"
+					   data-toggle="tooltip"
+					   data-content="http://data.europa.eu/m8g/thematicArea"
+					   data-placement="right">thematic area</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="thematicarea.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://data.europa.eu/m8g/thematicArea
+				</td>
+			</tr>
+                        <tr id="thematicarea.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				thematic area
+				</td>
+			</tr>
+                        <tr id="thematicarea.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				The Thematic Area of a Public Service.
+				</td>
+			</tr>
+                        <tr id="thematicarea.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				For example: social protection, health, recreation, culture and religion, family, traveling economic affairs, tax, staff, environment, etc.
+				</td>
+			</tr>
+                        <tr id="thematicarea.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="thematicarea.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="thematicarea.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+   
+
+    <h3>type</h3>
+    <table class="def" id="table-term-type">
+                    <thead>
+                        <tr >
+                            <th class="" style="width:5%">
+					<a href="https://github.com/SEMICeu/cpsv/issues/new?title=Issue%20for%20type&body=Explain%20your%20issue"}}>
+					   <img src="html/callout.png" loading="lazy" alt="(create issue)" width="20" height="20"/>
+					</a>
+                            </th>
+                            <th class="" style="width:20%">
+                                Class/Property
+                            </th>
+                            <th class="" style="width:75%">
+				<a href="http://purl.org/dc/terms/type"
+					   data-toggle="tooltip"
+					   data-content="http://purl.org/dc/terms/type"
+					   data-placement="right">type</a>
+                            </th> 
+                        </tr>
+                    </thead>
+		    <tbody> 
+                        <tr id="type.uri">
+                                <td></td>
+                                <td>
+				   URI
+				</td>
+				<td>
+				http://purl.org/dc/terms/type
+				</td>
+			</tr>
+                        <tr id="type.label">
+                                <td></td>
+                                <td>
+				   label
+				</td>
+				<td>
+				type
+				</td>
+			</tr>
+                        <tr id="type.definition">
+                                <td></td>
+                                <td>
+				   definition
+				</td>
+				<td>
+				Type of Rule.
+				</td>
+			</tr>
+                        <tr id="type.usage">
+                                <td></td>
+                                <td>
+				   usage 
+				</td>
+				<td>
+				For example: a rule for non-disclosure of a dataset, a rule for disclosure of a dataset, etc.
+				</td>
+			</tr>
+                        <tr id="type.domain">
+                                <td></td>
+                                <td>
+				   domain
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="type.range">
+                                <td></td>
+                                <td>
+				   range
+				</td>
+				<td>
+				</td>
+			</tr>
+                        <tr id="type.subproperty">
+                                <td></td>
+                                <td>
+				   subproperty of 
+				</td>
+				<td>
+				</td>
+			</tr>
+		    </tbody>
+        </table>
+	<p/>
+
+     
+
+
+</section>
+-->
+
+
+ 
+ 
+
+
+<section class="appendix">
+</section>
+
+
+<!-- End page content -->
+</body>
+
+<!-- This must be at the end of the template, to ensure that the iterator properly works -->
+    <script defer>
+
+
+	    var prefixes = [ 
+{'pref':'adms:', 'ns': 'http://www.w3.org/ns/adms#'},
+{'pref':'dcat:', 'ns': 'http://www.w3.org/ns/dcat#'},
+{'pref':'dcatap:', 'ns': 'http://data.europa.eu/r5r/'},
+{'pref':'dcterms:', 'ns': 'http://purl.org/dc/terms/'},
+{'pref':'dctype:', 'ns': 'http://purl.org/dc/dcmitype/'},
+{'pref':'foaf:', 'ns': 'http://xmlns.com/foaf/0.1/'},
+{'pref':'locn:', 'ns': 'http://www.w3.org/ns/locn#'},
+{'pref':'odrl:', 'ns': 'http://www.w3.org/ns/odrl/2/'},
+{'pref':'owl:', 'ns': 'http://www.w3.org/2002/07/owl#'},
+{'pref':'prov:', 'ns': 'http://www.w3.org/ns/prov#'},
+{'pref':'rdf:', 'ns': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'},
+{'pref':'rdfs:', 'ns': 'http://www.w3.org/2000/01/rdf-schema#'},
+{'pref':'skos:', 'ns': 'http://www.w3.org/2004/02/skos/core#'},
+{'pref':'spdx:', 'ns': 'http://spdx.org/rdf/terms#'},
+{'pref':'time:', 'ns': 'http://www.w3.org/2006/time#'},
+{'pref':'vcard:', 'ns': 'http://www.w3.org/2006/vcard/ns#'},
+{'pref':'xhv:', 'ns': 'http://www.w3.org/1999/xhtml/vocab#'},
+{'pref':'xsd:', 'ns': 'http://www.w3.org/2001/XMLSchema#'}
+				];
+
+	    function shorturl (url) {
+				var short = url;
+				for (e in prefixes) {
+				   var elem = prefixes[e];
+				   if (short.startsWith(elem.ns)) {
+  					short = elem.pref + short.slice(elem.ns.length);
+					}
+				};
+				return short;
+			};
+
+	    var shorten = document.getElementsByClassName("shorten");
+	    for (k=0;k < shorten.length ; k++){
+			var selem = shorten[k];	
+	                selem.innerHTML = shorturl(selem.innerHTML.trim());
+			}
+    </script>
+    <script defer>
+	    document.getElementById("w3c-state").insertAdjacentText("afterbegin", "SEMIC Recommendation ");
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/javascript/javascript.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/turtle/turtle.min.js" ></script>
+    <script src="https://codemirror.net/5/mode/javascript/javascript.js" ></script>
+    <script src="./html/example.js" ></script>
+	<script type="text/javascript">
+		function elementInView(elem){
+				goesIn = ($(window).height() + $(window).scrollTop()) > $(elem).offset().top;
+				goesOut = ($(window).scrollTop()) > ($(elem).offset().top + $(elem).height());
+				if (goesIn && !goesOut)
+					return 1;
+				else
+					return 0;
+			};
+
+		$(window).scroll(function(){
+			$('.CodeMirror').each(function(){
+				if (elementInView($(this))){
+					$(this).each(function(i, el){
+						el.CodeMirror.refresh();
+					});
+				}
+			});
+			
+		});
+	</script>
+	<style>
+		.CodeMirror {
+		  border: 1px solid #eee;
+		  height: auto;
+		}
+		.buttonsample {
+		cursor: pointer;
+		margin-top: 10px;
+		margin-left: 10px;
+		font-weight: 700;
+		border:0 outset buttonface;
+		background: #F5F6F8;
+		background-image: linear-gradient(to bottom,#F5F6F8,#DBDCDE);
+		border-radius:4px;
+		box-shadow:0 1px 3px #666;
+		font-family: Arial;
+		color: grey;
+		font-size: 14px;
+		padding: 10px 5px;
+		text-decoration: none;
+		float: right
+	}
+	.buttonsample:hover {color:#2a70d3}
+	.tabsstyle {
+		padding: 10px;
+		overflow: hidden;
+	}
+	li.ui-tabs-tab > a:hover {
+		background-color:dodgerblue;
+		color:white;
+	}
+  </style>
+</html>
